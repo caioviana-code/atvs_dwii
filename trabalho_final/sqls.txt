@@ -1,0 +1,34 @@
+insert into types (nome) values ("ADMIN");
+insert into types (nome) values ("FUNCIONARIO");
+
+insert into permissions (regra,permissao,type_id) values ("ferramentas.index",1,1);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.create",1,1);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.edit",1,1);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.show",1,1);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.destroy",1,1);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.index",1,1);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.create",1,1);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.edit",1,1);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.show",1,1);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.destroy",1,1);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.index",1,1);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.create",1,1);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.edit",1,1);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.show",1,1);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.destroy",1,1);
+
+insert into permissions (regra,permissao,type_id) values ("ferramentas.index",1,2);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.create",0,2);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.edit",0,2);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.show",1,2);
+insert into permissions (regra,permissao,type_id) values ("ferramentas.destroy",0,2);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.index",0,2);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.create",0,2);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.edit",0,2);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.show",0,2);
+insert into permissions (regra,permissao,type_id) values ("funcionarios.destroy",0,2);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.index",0,2);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.create",0,2);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.edit",0,2);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.show",0,2);
+insert into permissions (regra,permissao,type_id) values ("emprestimos.destroy",0,2);

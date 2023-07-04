@@ -37,6 +37,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionarios</a></li>
                                 <li><a href="{{route('ferramentas.index')}}" class="dropdown-item">Ferramentas</a></li>
+                                <li><a href="{{route('emprestimos.index')}}" class="dropdown-item">Empréstimos</a></li>
                                 
                             </ul>
                         </li>

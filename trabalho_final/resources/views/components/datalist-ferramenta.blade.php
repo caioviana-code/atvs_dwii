@@ -2,6 +2,7 @@
     
     <table class="table align-middle caption-top table-striped">
         <caption>Tabela de <b>Ferramentas</b></caption>
+        <a href="{{ route('emprestimos.create') }}" class="btn btn-succcess">Emprestar Ferramenta</a>
         <thead>
             <tr>
                 @php $cont=0; @endphp

@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Facades\UserPermissions;
 use App\Models\Ferramenta;
 use Illuminate\Http\Request;
 
 class FerramentaController extends Controller {
     
     public function index() {
+
+        if(!UserPermissions::isAuthorized('ferramentas.index')) {
+            abort(403);
+        }
         
         $data = Ferramenta::all();
 
@@ -15,6 +20,10 @@ class FerramentaController extends Controller {
     }
 
     public function create() {
+
+        if(!UserPermissions::isAuthorized('ferramentas.create')) {
+            abort(403);
+        }
         
         return view('ferramentas.create');
     }
@@ -43,10 +52,18 @@ class FerramentaController extends Controller {
     }
 
     public function show($id) {
-        //
+
+        if(!UserPermissions::isAuthorized('ferramentas.show')) {
+            abort(403);
+        }
+        
     }
 
     public function edit($id) {
+
+        if(!UserPermissions::isAuthorized('ferramentas.edit')) {
+            abort(403);
+        }
         
         $data = Ferramenta::find($id);
 
@@ -85,6 +102,10 @@ class FerramentaController extends Controller {
     }
 
     public function destroy($id) {
+
+        if(!UserPermissions::isAuthorized('ferramentas.destroy')) {
+            abort(403);
+        }
         
         $obj = Ferramenta::find($id);
 

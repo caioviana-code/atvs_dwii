@@ -9,9 +9,11 @@ class FuncionarioController extends Controller {
 
     public function index() {
         
+        $permissions = session('user_permissions');
+
         $data = Funcionario::all();
 
-        return view('funcionarios.index', compact('data'));
+        return view('funcionarios.index', compact(['data', 'permissions']));
     }
 
     public function create() {

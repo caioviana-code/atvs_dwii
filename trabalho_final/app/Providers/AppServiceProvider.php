@@ -15,5 +15,6 @@ class AppServiceProvider extends ServiceProvider {
         
         Blade::component('components.datalist-funcionarios', 'datalistFuncionario');
         Blade::component('components.datalist-ferramentas', 'datalistFerramenta');
+        Blade::component('components.datalist-emprestimos', 'datalistEmprestimos');
     }
 }
