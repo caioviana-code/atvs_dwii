@@ -16,6 +16,8 @@ class CreateEmprestimosTable extends Migration {
             $table->unsignedBigInteger('ferramenta_id');
             $table->foreign('ferramenta_id')->references('id')->on('ferramentas');
             $table->integer('quantidade');
+            $table->timestamp('data_emprestimos')->nullable();
+            $table->timestamp('data_devolucao')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

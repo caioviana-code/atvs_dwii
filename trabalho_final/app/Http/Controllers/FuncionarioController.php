@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Facades\UserPermissions;
 use App\Models\Funcionario;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller {
 
     public function index() {
+
+        if(!UserPermissions::isAuthorized('funcionarios.index')) {
+            abort(403);
+        }
         
         $permissions = session('user_permissions');
 
@@ -17,6 +22,10 @@ class FuncionarioController extends Controller {
     }
 
     public function create() {
+
+        if(!UserPermissions::isAuthorized('funcionarios.create')) {
+            abort(403);
+        }
         
         return view('funcionarios.create');
     }
@@ -48,10 +57,18 @@ class FuncionarioController extends Controller {
     }
 
     public function show($id) {
+
+        if(!UserPermissions::isAuthorized('funcionarios.show')) {
+            abort(403);
+        }
         
     }
 
     public function edit($id) {
+
+        if(!UserPermissions::isAuthorized('funcionarios.edit')) {
+            abort(403);
+        }
         
         $data = Funcionario::find($id);
 
@@ -93,6 +110,10 @@ class FuncionarioController extends Controller {
     }
 
     public function destroy($id) {
+
+        if(!UserPermissions::isAuthorized('funcionarios.destroy')) {
+            abort(403);
+        }
         
         $obj = Funcionario::find($id);
 

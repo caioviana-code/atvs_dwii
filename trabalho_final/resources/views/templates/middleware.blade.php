@@ -42,6 +42,12 @@
                                 @if(UserPermissions::isAuthorized('ferramentas.index'))
                                     <li><a href="{{route('ferramentas.index')}}" class="dropdown-item">Ferramentas</a></li>
                                 @endif
+                                @if(UserPermissions::isAuthorized('funcionarios.index'))
+                                    <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionários</a></li>
+                                @endif
+                                @if(UserPermissions::isAuthorized('emprestimos.index'))
+                                    <li><a href="{{route('emprestimos.index')}}" class="dropdown-item">Empréstimos</a></li>
+                                @endif
                             </ul>
                         </li>
                         <li class="nav-item ps-2 me-3">

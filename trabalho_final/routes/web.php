@@ -24,4 +24,10 @@ Route::get('/dashboard', function () {
 Route::resource('ferramentas', 'FerramentaController')
     ->middleware(['auth']);
 
+Route::resource('funcionarios', 'FuncionarioController')
+    ->middleware(['auth']);
+
+Route::resource('emprestimos', 'EmprestimoController')
+    ->middleware((['auth']));
+
 require __DIR__.'/auth.php';

@@ -13,7 +13,10 @@
 
         <caption>Tabela de <b>Ferramentas</b></caption>
    
-        <!-- <a href="" class="btn btn-succcess">Emprestar Ferramenta</a> -->
+        @if(UserPermissions::isAuthorized('emprestimos.create'))
+        <a href="{{route('emprestimos.create')}}" class="btn btn-success btn-block align-content-center">Emprestar Ferramenta</a>
+        @endif
+
         <thead>
             <tr>
                <th scope="col">Nome</th>
