@@ -141,15 +141,16 @@
     <!-- JQuery / JS -->
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script type="text/javascript">
 
         function showInfoModal() {
-            
-            $$('#infoModal').modal().find('.modal-body').html(""); 
-            for(let a=0; a < arguments.length; a++) {
+            $('#infoModal').modal().find('.modal-body').html("");
+            for (let a = 0; a < arguments.length; a++) {
                 $('#infoModal').modal().find('.modal-body').append("<b>" + arguments[a] + "</b><br>");
             }
-            $("#infoModal").modal('show');
+            $('#infoModal').modal('show');
         }
 
         function closeInfoModal() {

@@ -32,6 +32,7 @@
                             {{ $item->data_devolucao }}
                         @endif
                     </td>
+                    @if($item->data_devolucao === null)
                     <td>
                         <a href= "{{ route('emprestimos.edit', $item->id) }}" class="btn btn-success">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
@@ -40,6 +41,7 @@
                             </svg>
                         </a>
                     </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

@@ -31,14 +31,13 @@ class FerramentaController extends Controller {
     public function store(Request $request) {
 
         $regras = [
-            'nome' => 'required|max:100|min:5',
+            'nome' => 'required|max:100',
             'estoque' => 'required',
         ];
 
         $msgs = [
             "required" => 'O preenchimento do campo :attribute é obrigatório|',
-            "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!',
-            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!',
+            "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!'
         ];
 
         $request->validate($regras, $msgs);
@@ -75,14 +74,13 @@ class FerramentaController extends Controller {
     public function update(Request $request, $id) {
 
         $regras = [
-            'nome' => 'required|max:100|min:5',
+            'nome' => 'required|max:100',
             'estoque' => 'required',
         ];
 
         $msgs = [
             "required" => 'O preenchimento do campo :attribute é obrigatório|',
-            "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!',
-            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!',
+            "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!'
         ];
 
         $request->validate($regras, $msgs);

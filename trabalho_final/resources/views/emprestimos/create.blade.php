@@ -47,11 +47,11 @@
                     />  
                     <label for="quantidade">Quantidade</label>
 
-                    @error('quantidade') 
+                    @if(session('error')) 
                         <div class="invalid-feedback">
-                            {{ $message }}
+                            {{ session('error') }}
                         </div>
-                    @enderror
+                    @endif
 
                 </div>
             </div>

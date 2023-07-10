@@ -35,14 +35,13 @@ class FuncionarioController extends Controller {
         $regras = [
             'nome' => 'required|max:100|min:10',
             'email' => 'required|max:150|min:15|unique:funcionarios',
-            'cpf' => 'required|max:20|min:11|unique:funcionarios'
+            'cpf' => 'required|max:20|min:11'
         ];
 
         $msgs = [
             "required" => 'O preenchimento do campo :attribute é obrigatório|',
             "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!',
-            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!',
-            "unique" => 'Já existe um funcionário cadastro com esse :attribute'
+            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!'
         ];
 
         $request->validate($regras, $msgs);
@@ -82,14 +81,13 @@ class FuncionarioController extends Controller {
         $regras = [
             'nome' => 'required|max:100|min:10',
             'email' => 'required|max:150|min:15|unique:funcionarios',
-            'cpf' => 'required|max:20|min:11|unique:funcionarios'
+            'cpf' => 'required|max:20|min:11'
         ];
 
         $msgs = [
             "required" => 'O preenchimento do campo :attribute é obrigatório|',
             "max" => 'O campo :attribute possui o tamanho máximo de :max caracteres!',
-            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!',
-            "unique" => 'Já existe um funcionário cadastro com esse :attribute'
+            "min" => 'O campo :attribute possui o tamanho minimo de :min caracteres!'
         ];
 
         $request->validate($regras, $msgs);
