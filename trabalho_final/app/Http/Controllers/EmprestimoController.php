@@ -15,7 +15,7 @@ class EmprestimoController extends Controller {
         if(!UserPermissions::isAuthorized('emprestimos.index')) {
             abort(403);
         }
- 
+        
         $permissions = session('user_permissions');
 
         $data = Emprestimo::with(['funcionario', 'ferramenta'])->get();

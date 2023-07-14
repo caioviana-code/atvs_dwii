@@ -2,26 +2,41 @@
 
 namespace Tests\Unit;
 
-use App\Http\Controllers\FerramentaController;
 use App\Models\Ferramenta;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Http\RedirectResponse;
-use PHPUnit\Framework\TestCase;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
+use App\Models\Type;
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
 
 class FerramentaTest extends TestCase {
 
-    use RefreshDatabase;
-   
-    public function testExluirFerramenta() {
+    use DatabaseMigrations;
 
-        $ferramenta = Ferramenta::factory()->create([
-            'nome' => 'ferramente teste',
-            'estoque' => 10
+    public function testCriarFerramenta() {
+
+        $type = Type::factory()->create([
+            'nome' => 'ADMIN'
         ]);
 
-        $this->assertTrue($ferramenta->estoque >= 0);
+        $user = User::factory()->create([
+            'name' => 'root',
+            'email' => 'root@email.com',
+            'type_id' => $type->id,
+            'password' => bcrypt('root12345678')
+        ]);
+
+        $ferramentaData = [
+            'nome' => 'martelo',
+            'estoque' => 10 
+        ];
+
+        $this->actingAs($user)->post('/ferramentas', $ferramentaData)->assertRedirect('/ferramentas');
+
+        $ferramenta = Ferramenta::find(1);
+
+        $this->assertEquals('martelo', $ferramenta->nome);
         
     }
 }
